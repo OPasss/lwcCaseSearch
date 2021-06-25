@@ -1,0 +1,12 @@
+<!-- Case Result -->
+<template>
+    <lightning-datatable
+            key-field="id"
+            columns={columns}
+            data={caseList}
+            default-sort-direction={defaultSortDirection}
+            sorted-direction={sortDirection}
+            sorted-by={sortedField}
+            onsort={onHandleSort}>
+    </lightning-datatable>
+</template>
