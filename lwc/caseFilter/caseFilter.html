@@ -1,0 +1,55 @@
+<!-- Case Filter -->
+<template>
+    <lightning-layout horizontal-align="space">
+        <lightning-layout-item padding="around-small" size=3>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="select-status">Case Status</label>
+                <select class="slds-select" id="select-status" onchange={selectChange} name="status">
+                    <option value="">--None--</option>
+                    <template if:true={statusPicklist.data}>
+                    <template for:each = {statusPicklist.data.values} for:item="statusItem">
+                       <option key={statusItem.value}>{statusItem.value}</option>
+                    </template>
+                    </template>
+                </select>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size=3>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="select-account">Account Name</label>
+                <select class="slds-select" id="select-account"  onchange={selectChange} name="account">
+                   <option value="">--None--</option>
+                    <template if:true={accountName.data}>
+                        <template for:each = {accountName.data} for:item="acc">
+                            <option key={acc.Id}>{acc.Name}</option>
+                        </template>
+                    </template>
+                </select>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size=3>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="select-type">Type</label>
+                <select class="slds-select" id="select-type" onchange={selectChange} name="type">
+                    <option value="">--None--</option>
+                    <template if:true={typePicklist.data}>
+                        <template for:each = {typePicklist.data.values} for:item="typeItem">
+                            <option key={typeItem.value}>{typeItem.value}</option>
+                        </template>
+                    </template>
+                </select>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size=3>
+            <div class="slds-form-element" >
+                <lightning-input onchange= {selectChange}
+                            name="enter-subject"
+                            label="Subject"
+                            type="search"
+                            min-length=5
+                >
+                </lightning-input>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

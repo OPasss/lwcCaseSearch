@@ -1,0 +1,12 @@
+<!-- Search Case Tab -->
+<template>
+    <lightning-card title="Search Case" icon-name="standard:case"  class="slds-p-around_medium">
+        <c-case-filter onselected={selectedHandler}></c-case-filter>
+    </lightning-card>
+    <template if:true={caseList}>
+        <lightning-card title="Available Case" icon-name="standard:case" class="slds-p-around_medium" >
+            <lightning-button label="Close Case" slot="actions" onclick={doClose}></lightning-button>
+            <c-case-result case-list= {caseList} ></c-case-result>
+        </lightning-card>
+    </template>
+</template>
